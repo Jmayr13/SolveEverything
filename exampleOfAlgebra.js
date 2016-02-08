@@ -11,3 +11,11 @@ expr = expr.subtract(3);
 expr = expr.add("x");
 
 console.log(expr.toString());
+
+var eq = new Equation(expr, 4);
+
+console.log(eq.toString());
+
+var x = eq.solveFor("x");
+
+console.log("x = " + x.toString());
