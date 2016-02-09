@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Finding Intercepts</title>
+    <script type="text/javascript" src="findingIntercepts.js" async></script>
+</head>
+<body>
+<form method="get" onsubmit="solve(); return false">
+    <table class="oneSolution" id="formtable">
+        <thead>
+        <tr>
+            <th>Equation type</th>
+            <th>Input</th>
+            <th>Solution</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td><label for="linearEquationInput"> <var>Linear Equation</var></label></td>
+            <td><input type="text" id="linearEquationInput" step="any" oninput="solve();" /></td>
+            <!-- can't get the javascript variable to print to the cell below -->
+            <td id="equationOutput"></td>
+        </tr>
+        </tbody>
+    </table>
+</form>
+
+</body>
+</html>

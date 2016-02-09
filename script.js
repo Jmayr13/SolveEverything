@@ -1,16 +1,26 @@
 /**
  * Created by Josh on 2/7/2016.
  */
-
+var algebra = require('algebra.js');
+var Fraction = algebra.Fraction;
+var Expression = algebra.Expression;
+var Equation = algebra.Equation;
 //The main function that will be started after the user inputs an equation
 function solve() {
     findXIntercept();
 
 }
 function findXIntercept() {
-    var expressionInput = getElementById("equationInput");
-    var xIntercept = expressionInput.solveFor("x");
-    console.log("x = " + xIntercept.toString())
+    var equationToSolve = algebra.parse(getElementById("equationInput"));
+
+    var cubic = new Equation(equationToSolve, 0);
+
+
+   // console.log(cubic.toString());
+
+    var answers = cubic.solveFor("x");
+
+   // console.log("x = " + answers.toString());
 }
 
 
