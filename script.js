@@ -14,34 +14,29 @@ function solve(){
 
 
 function findingXIntercept() {
-    //var linearEquationInput = prompt("Enter an equation: ");
     var linearEquationInput = algebra.parse(document.getElementById("linearEquationInput").value);
-    //var linearEquationInput = algebra.parse("x^3 + 9x^2 + 26x + 24");
-    ///document.getElementById("demo").innerHTML = linearEquationInput.toString();
-    //console.log(typeof String(linearEquationInput));
-    //var linearEquationString = String(linearEquationInput);
-    //document.getElementById("demo").innerHTML = "linearEquationString";
     var linearEquationSolveX = new Equation(linearEquationInput, 0);
-    //document.getElementById("demo1").innerHTML = linearEquationSolveX;
     var linearAnswer = linearEquationSolveX.solveFor("x");
-    var linearAnswers = linearAnswer.toString();
-    katex.render("x = " + linearAnswers, mykatex1, {displayMode: true});
-    ///document.getElementById("equationOutput").innerHTML = linearAnswer.toString();
-    //document.getElementById("demo2").innerHTML = linearAnswers;
-    //document.getElementById("equationOutput").innerHTML = linearAnswers;
-    //console.log(linearAnswers);
+    //Returns no solution if the equation does not cross the x-axis, prints the answer if there is one
+    if (linearAnswer == "") {
+        document.getElementById("mykatex1").innerHTML = "No solution";
+    } else {
+        var linearAnswers = linearAnswer.toString();
+        katex.render("x = " + linearAnswers, mykatex1, {displayMode: true});
+    }
 }
 
 function findingYIntercept() {
     var linearEquationInput = document.getElementById("linearEquationInput").value;
-    //var linearEquationInput = "x+5";
     var yValue = algebra.parse("y");
     var linearEquationInputReplace = linearEquationInput.replace(/x/g, "0");
-    // console.log(linearEquationInputReplace)
     var linearEquationInputEquation = algebra.parse(linearEquationInputReplace);
     var linearEquationSolveY = new Equation(yValue, linearEquationInputEquation);
-    var yInterceptAnswers = linearEquationSolveY.solveFor("y");
-    var yInterceptAnswers = yInterceptAnswers.toString();
-    katex.render("y = " + yInterceptAnswers, mykatex2, {displayMode: true});
-    //console.log(yInterceptAnswers.toString());
+    var yInterceptAnswer = linearEquationSolveY.solveFor("y");
+    if (yInterceptAnswer == "") {
+        document.getElementById("mykatex2").innerHTML = "No solution";
+    } else {
+        var yInterceptAnswers = yInterceptAnswer.toString();
+        katex.render("y = " + yInterceptAnswers, mykatex2, {displayMode: true});
+    }
 }
