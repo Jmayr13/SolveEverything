@@ -22,11 +22,12 @@ function findingXIntercept() {
         document.getElementById("mykatex1").innerHTML = "0";
         var linearAnswers = linearAnswer.toString();
         katex.render("x = " + linearAnswers, mykatex1, {displayMode: true});
-    } else if (linearAnswer == "") {
-        document.getElementById("mykatex1").innerHTML = "no solution";
-    } else if(linearAnswer == "" && linearAnswer != "") {
+    }  else if(linearAnswer == "" && linearAnswer != "") {
         var linearAnswers = linearAnswer.toString();
         katex.render("x = " + linearAnswers, mykatex1, {displayMode: true});
+    }
+    else if (linearAnswer == "") {
+        document.getElementById("mykatex1").innerHTML = "no solution";
     }
     else {
         var linearAnswers = linearAnswer.toString();
@@ -38,7 +39,7 @@ function findingXIntercept() {
 function findingYIntercept() {
     var linearEquationInput = document.getElementById("linearEquationInput").value;
     var yValue = algebra.parse("y");
-    var linearEquationInputReplace = linearEquationInput.replace(/x/g, "0");
+    var linearEquationInputReplace = linearEquationInput.replace(/x/g, "(0)");
     var linearEquationInputEquation = algebra.parse(linearEquationInputReplace);
     var linearEquationSolveY = new Equation(yValue, linearEquationInputEquation);
     var yInterceptAnswer = linearEquationSolveY.solveFor("y");
