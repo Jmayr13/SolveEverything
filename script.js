@@ -1,6 +1,7 @@
 /**
  * Created by Josh on 2/14/2016.
  */
+//var algebra = require('algebra.js');
 var Fraction = algebra.Fraction;
 var Expression = algebra.Expression;
 var Equation = algebra.Equation;
@@ -54,3 +55,21 @@ function findingYIntercept() {
         katex.render("y = " + yInterceptAnswers, mykatex2, {displayMode: true});
     }
 }
+/*
+var linearEquationInput = algebra.parse("x+5");
+var linearEquationSolveX = new Equation(linearEquationInput, 0);
+var linearAnswer = linearEquationSolveX.solveFor("x");
+console.log(linearAnswer);
+console.log(typeof linearAnswer)
+var linearAnswers = linearAnswer.toString();
+console.log(linearAnswers);
+console.log(typeof linearAnswers);
+var linearEquationInput = algebra.parse("x^2+1");
+var linearEquationSolveX = new Equation(linearEquationInput, 0);
+var linearAnswer = linearEquationSolveX.solveFor("x");
+console.log(linearAnswer);
+console.log(typeof linearAnswer);
+var linearAnswers = linearAnswer.toString();
+console.log(linearAnswers);
+console.log(typeof linearAnswers);
+*/
